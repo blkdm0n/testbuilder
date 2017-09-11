@@ -28,23 +28,23 @@ var detectNetwork = function(cardNumber) {
   var preFixFourDigit = Number(cardNumber.slice(0,4));
   var preFixSixDigit = Number(cardNumber.slice(0,6));
   var cardLength = cardNumber.length;
-  var cardDetected = ''
+  var cardDetected = 'Network not detected';
 
   
 
-  if ((preFixTwoDigit >= 38 && preFixTwoDigit <= 39) && cardLength === 14) {
+  if ((preFixTwoDigit >= 38 && preFixTwoDigit <= 39) && (cardLength === 14)) {
   	cardDetected = "Diner's Club";
   }
 
-  if ((preFixTwoDigit === 34 || preFixTwoDigit ===37) && cardLength === 15) {
+  if ((preFixTwoDigit === 34 || preFixTwoDigit === 37) && (cardLength === 15)) {
   	cardDetected = "American Express";
   }
 
-  if ((preFixTwoDigit >= 51 && preFixTwoDigit <=55) && cardLength === 16) {
+  if ((preFixTwoDigit >= 51 && preFixTwoDigit <= 55) && (cardLength === 16)) {
   	cardDetected = "MasterCard";
   }
 
-  if (preFixOneDigit === 4 && (cardLength === 13 || cardLength === 16 || cardLength === 19)) {
+  if ((preFixOneDigit === 4) && (cardLength === 13 || cardLength === 16 || cardLength === 19)) {
   	cardDetected = "Visa";
   } 
 
